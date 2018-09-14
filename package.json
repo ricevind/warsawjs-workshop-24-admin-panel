@@ -1,0 +1,30 @@
+{
+    "private": true,
+    "name": "warsawjs-workshop-24-admin-panel",
+    "description": "TODO",
+    "version": "1.0.0",
+    "license": "MIT",
+    "author": {
+        "name": "Piotr Kowalski",
+        "email": "piecioshka@gmail.com",
+        "url": "https://piecioshka.pl/"
+    },
+    "scripts": {
+        "clear": "rm -rf dist/ coverage/",
+        "clear:all": "rm -rf node_modules/ && npm run clear",
+        "test": "jest",
+        "count": "find . -name '*.js' -not -path './node_modules/*' | xargs wc -l | sort -r",
+        "lint": "eslint ./"
+    },
+    "dependencies": {
+        "jest-cli": "^23.6.0"
+    },
+    "devDependencies": {
+        "eslint": "^5.5.0",
+        "eslint-config-piecioshka": "^2.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:piecioshka/warsawjs-workshop-24-admin-panel.git"
+    }
+}
