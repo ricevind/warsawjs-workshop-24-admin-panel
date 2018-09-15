@@ -4,9 +4,9 @@ module.exports = {
     // http://eslint.org/docs/user-guide/configuring#specifying-environments
     env: {
         es6: true,
-        // browser: true,
-        // node: true,
-        // commonjs: true,
+        browser: true,
+        node: true,
+        commonjs: true,
         // amd: true,
         // jquery: true,
         jasmine: true
