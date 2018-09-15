@@ -18,13 +18,21 @@ WarsawJS Workshop #24: Projekt panelu administracyjnego
 
 ## Krok po kroku
 
-1. Instalacja `npm/json-server`
-2. Wygenerowanie danych za pomocą schemy:
+### Baza danych
+
+1. Zainstalować `npm/json-server`
+2. Wygenerować danych za pomocą schemy:
     + <https://gist.github.com/piecioshka/b071e2d53a1115527ab5a5b21765bed3>
-3. Zbudowanie polecenia: `npm run start:back-end`,
+3. Zbudować polecenia: `npm run start:back-end`,
 4. Uruchomić serwer bazodanowy
 
-### Napisać aplikację poprzez definiowanie wymagań w testach
+### Continuous Integration
+
+1. Zalogować sie do Semaphore CI za pomocą GitHuba
+2. Skonfigurować projekt
+3. Dodać badge do `README.md` projektu
+
+### Napisać aplikację (zgodnie z metodologią "test first")
 
 1. Wygenerowanie konfiguracji dla `Jest`-a
 
@@ -32,7 +40,7 @@ WarsawJS Workshop #24: Projekt panelu administracyjnego
     npx jest --init
     ```
 
-2. Integracja z Babel.js
+2. Integracja z `Babel.js`
 
     ```bash
     npm i -D babel-jest regenerator-runtime @babel/preset-env @babel/core babel-core@^7.0.0-bridge.0
@@ -49,17 +57,22 @@ WarsawJS Workshop #24: Projekt panelu administracyjnego
     ```
 
 4. Napisać test, który będzie weryfikować serwis do pobierania danych z serwera
-5. Napisać test, który będzie sprawdzać komponent prezentować
-6. Zamockować DOM za pomocą `npm/jsdom`
-7. Stworzyć stronę DEMO, gdzie osadzić uprzednio stworzony komponent
+5. Napisać wcześniej wspomniany serwis
+6. Napisać test, który będzie weryfikować komponent do prezentcji
+    + Zamockować DOM za pomocą `npm/jsdom`
+7. Napisać wcześniej wspomniany komponent
+8. Napisać test, który będzie weryfikować model
+9. Napisać wcześniej wspomniany model
+10. Stworzyć stronę DEMO, gdzie osadzić uprzednio stworzony komponent
+    + Stowrzyć plik `front-end/main.js`, który połączy wszystkie 3 moduły
+    + Wykorzystać `Webpacka` do zbudowania pliku `dist/bundle.js`
 
-## Problemy
+## Problemy do rozwiązania
 
-* usunięcie parametryzacji funkcji utilsowych
-* agregacja funkcji utilsowych to jednego pliku
-* zabicie na sztywno
-* skopiowanie funkcji utilsowych kilka razy w jednym pliku + zmienić ich nazwę
-
+* Usunięcie parametryzacji funkcji utilsowych
+* Agregacja funkcji utilsowych to jednego pliku
+* Zabicie na sztywno
+* Skopiowanie funkcji utilsowych kilka razy w jednym pliku + zmienić ich nazwę
 
 ## License
 
