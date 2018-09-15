@@ -8,7 +8,13 @@ WarsawJS Workshop #24: Projekt panelu administracyjnego
 
 ## Wykorzystywane narzędzia
 
+* <https://webpack.js.org/>
+* <https://jestjs.io/>
+* <https://babeljs.io>
+* <https://eslint.org>
 * <https://json-schema-faker.js.org/>
+* <https://github.com/DavidAnson/markdownlint>
+* <https://github.com/typicode/json-server>
 
 ## Krok po kroku
 
@@ -44,7 +50,8 @@ WarsawJS Workshop #24: Projekt panelu administracyjnego
 
 4. Napisać test, który będzie weryfikować serwis do pobierania danych z serwera
 5. Napisać test, który będzie sprawdzać komponent prezentować
-6. Stworzyć stronę DEMO, gdzie osadzić uprzednio stworzony komponent
+6. Zamockować DOM za pomocą `npm/jsdom`
+7. Stworzyć stronę DEMO, gdzie osadzić uprzednio stworzony komponent
 
 ## Problemy
 

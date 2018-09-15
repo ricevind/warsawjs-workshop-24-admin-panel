@@ -1,4 +1,3 @@
-coverage/
-dist/
+front-end/dist/
 
-__tests__/
+jest.config.js
