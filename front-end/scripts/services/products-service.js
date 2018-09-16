@@ -6,11 +6,11 @@ class ProductService {
     }
 
     fetchProducts() {
-        // if (typeof fetch !== 'function') {
-        //     throw new Error(
-        //         'global fetch is not defined, use setFetcher(fetcher)'
-        //     );
-        // }
+        if (typeof this.fetch !== 'function') {
+            throw new Error(
+                'global fetch is not defined, use setFetcher(fetcher)'
+            );
+        }
         const url = `${this.api}/products`;
         return this.fetch(url).then(response => response.json());
     }
