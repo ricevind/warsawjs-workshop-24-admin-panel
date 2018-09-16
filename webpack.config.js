@@ -12,6 +12,6 @@ module.exports = {
     devServer: {
         contentBase: './front-end',
         compress: true,
-        port: 9000
+        port: 9001
     }
 };

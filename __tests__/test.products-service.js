@@ -1,4 +1,7 @@
-import productService from '../front-end/scripts/services/products-service';
+import * as fetcher from 'node-fetch';
+import productService, {
+    setFetcher
+} from '../front-end/scripts/services/products-service';
 
 describe('ProductsService', () => {
     it('exists', () => {
@@ -14,7 +17,8 @@ describe('ProductsService', () => {
             let returnedValue = null;
 
             beforeEach(async () => {
-                global.fetch = jest.fn().mockReturnValue(Promise.resolve());
+                // global.fetch = jest.fn().mockReturnValue(Promise.resolve());
+                setFetcher(fetcher);
                 returnedValue = productService.fetchProducts();
             });
 
@@ -30,7 +34,6 @@ describe('ProductsService', () => {
             it('returns Promise', () => {
                 expect(typeof returnedValue.then).toBe('function');
             });
-
         });
     });
 });
