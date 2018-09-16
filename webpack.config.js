@@ -1,4 +1,5 @@
 module.exports = {
+    entry: './front-end/scripts/main.js',
     module: {
         rules: [
             {
@@ -7,5 +8,10 @@ module.exports = {
                 loader: 'babel-loader'
             }
         ]
+    },
+    devServer: {
+        contentBase: './front-end',
+        compress: true,
+        port: 9000
     }
 };

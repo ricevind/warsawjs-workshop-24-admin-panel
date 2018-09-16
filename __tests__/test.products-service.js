@@ -16,7 +16,6 @@ describe('ProductsService', () => {
             beforeEach(async () => {
                 global.fetch = jest.fn().mockReturnValue(Promise.resolve());
                 returnedValue = productService.fetchProducts();
-                console.log(returnedValue)
             });
 
             it('calls fetch', () => {
@@ -31,6 +30,7 @@ describe('ProductsService', () => {
             it('returns Promise', () => {
                 expect(typeof returnedValue.then).toBe('function');
             });
+
         });
     });
 });
