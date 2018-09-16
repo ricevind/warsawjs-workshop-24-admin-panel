@@ -1,7 +1,7 @@
-import * as fetcher from 'node-fetch';
 import productService, {
     setFetcher
 } from '../front-end/scripts/services/products-service';
+import data from '../back-end/db.json';
 
 describe('ProductsService', () => {
     it('exists', () => {
@@ -17,9 +17,18 @@ describe('ProductsService', () => {
             let returnedValue = null;
 
             beforeEach(async () => {
-                // global.fetch = jest.fn().mockReturnValue(Promise.resolve());
-                setFetcher(fetcher);
+                global.fetch = jest
+                    .fn()
+                    .mockReturnValue(
+                        Promise.resolve({ json: () => data.products })
+                    );
+                setFetcher(fetch);
                 returnedValue = productService.fetchProducts();
+            });
+
+            afterEach(() => {
+                productService.flushCache();
+                global.fetch = null;
             });
 
             it('calls fetch', () => {
@@ -33,6 +42,13 @@ describe('ProductsService', () => {
 
             it('returns Promise', () => {
                 expect(typeof returnedValue.then).toBe('function');
+            });
+
+            it('promise resolves to data', done => {
+                returnedValue.then(returnedData => {
+                    expect(returnedData).toEqual(data.products);
+                    done();
+                });
             });
         });
     });
